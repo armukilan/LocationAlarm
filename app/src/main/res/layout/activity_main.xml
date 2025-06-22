@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <!-- AutoCompleteTextView for location search with suggestions -->
+    <AutoCompleteTextView
+        android:id="@+id/editTextLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Type the location"
+        android:hint="@string/enter_destination"
+        android:inputType="text"
+        android:importantForAutofill="yes"
+        android:minHeight="48dp"
+        android:padding="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:completionThreshold="3"
+        android:dropDownWidth="match_parent" />
+
+    <!-- Confirm button -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_destination"
+        android:layout_below="@id/editTextLocation"
+        android:layout_marginTop="12dp"
+        android:minHeight="48dp"
+
+        android:layout_alignParentEnd="true" />
+
+    <!-- Clear button - positioned to the left of the Set Destination button -->
+    <!-- Clear button - positioned to the left of the Set Destination button -->
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:minHeight="48dp"
+        android:layout_below="@id/editTextLocation"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@id/btnConfirm"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+    <!-- OpenStreetMap View -->
+
+    <!-- OpenStreetMap View - Modified to leave space for Next button -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnConfirm"
+        android:layout_above="@id/btnNext"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Next button at the bottom -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:enabled="false" />
+
+
+
+</RelativeLayout>
